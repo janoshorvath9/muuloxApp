@@ -1,20 +1,33 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { useState } from 'react';
+import HomeScreen from './pages/HomeScreen';
+import WebViewPage from './pages/WebViewPage';
+
+type ScreenState =
+  | { name: 'home' }
+  | {
+      name: 'webview';
+      url: string;
+      title: string;
+    };
 
 export default function App() {
+  const [screen, setScreen] = useState<ScreenState>({ name: 'home' });
+
+  if (screen.name === 'webview') {
+    return (
+      <WebViewPage
+        url={screen.url}
+        title={screen.title}
+        onBack={() => setScreen({ name: 'home' })}
+      />
+    );
+  }
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <HomeScreen
+      onOpenPage={(url, title) => {
+        setScreen({ name: 'webview', url, title });
+      }}
+    />
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
