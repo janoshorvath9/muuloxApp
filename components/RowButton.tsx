@@ -19,8 +19,8 @@ const base = StyleSheet.create({
     paddingVertical: 18,
     paddingHorizontal: 18,
     borderRadius: 20,
-    minHeight: 108,
-    alignItems: 'center',
+    minHeight: 130,
+    alignItems: 'flex-start',
     flexDirection: 'row',
     justifyContent: 'space-between',
   },
@@ -47,12 +47,14 @@ const base = StyleSheet.create({
   buttonClientText: {
     fontSize: 17,
     fontWeight: '700',
+    flexShrink: 1,
   },
   buttonClientDescription: {
     fontSize: 13,
     fontWeight: '400',
     marginTop: 4,
     lineHeight: 18,
+    flexShrink: 1,
   },
   chevronWrap: {
     flexShrink: 0,
@@ -153,17 +155,11 @@ const RowButton: FC<RowButtonProps> = ({
             icon == null && { marginLeft: 0 },
           ]}
         >
-          <Text
-            style={[base.buttonClientText, v.buttonClientText]}
-            numberOfLines={2}
-          >
+          <Text style={[base.buttonClientText, v.buttonClientText]}>
             {title}
           </Text>
           {description != null ? (
-            <Text
-              style={[base.buttonClientDescription, v.buttonClientDescription]}
-              numberOfLines={2}
-            >
+            <Text style={[base.buttonClientDescription, v.buttonClientDescription]}>
               {description}
             </Text>
           ) : null}

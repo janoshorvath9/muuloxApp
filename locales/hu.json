@@ -1,0 +1,38 @@
+{
+  "home": {
+    "tagline": "Vezető B2B beszállító a kiskereskedelem és HoReCa számára",
+    "logoA11y": "Muulox logó",
+    "toastAdminUnlocked": "Adminisztrátori mód feloldva",
+    "shopTitle": "ONLINE ÁRUHÁZ",
+    "shopDescription": "Válasszon több mint 5000 termék közül vállalkozása számára!",
+    "shopWebviewTitle": "Weboldal és bolt",
+    "portalTitle": "MUULOX PORTÁL",
+    "portalDescription": "Az online felület, ahol mindent lát a cégéről",
+    "portalWebviewTitle": "Ügyfélirányítópult",
+    "adminTitle": "Adminisztrációs panel",
+    "adminDescription": "Korlátozott hozzáférés",
+    "adminWebviewTitle": "Adminisztrációs panel",
+    "legalPrivacy": "Adatvédelem",
+    "legalTerms": "Feltételek",
+    "legalPrivacyA11y": "Adatvédelmi szabályzat megtekintése",
+    "legalTermsA11y": "Felhasználási feltételek megtekintése"
+  },
+  "privacy": {
+    "backA11y": "Vissza a kezdőképernyőre",
+    "appSubtitle": "MUULOX mobilalkalmazás"
+  },
+  "terms": {
+    "backA11y": "Vissza a kezdőképernyőre",
+    "appSubtitle": "MUULOX mobilalkalmazás"
+  },
+  "webview": {
+    "backA11y": "Vissza",
+    "reloadA11y": "Oldal újratöltése",
+    "homeA11y": "Vissza a kezdőképernyőre",
+    "errorTitle": "Az oldal nem érhető el",
+    "errorDescription": "Ellenőrizze az internetkapcsolatot, és próbálja újra.",
+    "retry": "Próbálja újra",
+    "retryA11y": "Próbálja meg újra betölteni az oldalt",
+    "loading": "{{title}} betöltése..."
+  }
+}

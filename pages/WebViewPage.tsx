@@ -1,19 +1,55 @@
-import { useState } from 'react';
-import { ActivityIndicator, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { useCallback, useEffect, useRef, useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import { StatusBar } from 'expo-status-bar';
+import {
+  ActivityIndicator,
+  BackHandler,
+  Platform,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { WebView } from 'react-native-webview';
-import { ArrowLeftIcon, RefreshCwIcon, AlertCircleIcon } from 'lucide-react-native';
+import { ArrowLeftIcon, RefreshCwIcon, AlertCircleIcon, HouseIcon } from 'lucide-react-native';
 import { colors } from '../constants/colors';
 
 type WebViewPageProps = {
   url: string;
   title: string;
-  onBack: () => void;
+  onClose: () => void;
 };
 
-export default function WebViewPage({ url, title, onBack }: WebViewPageProps) {
+export default function WebViewPage({ url, title, onClose }: WebViewPageProps) {
+  const { t } = useTranslation();
+  const webViewRef = useRef<WebView>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
   const [reloadKey, setReloadKey] = useState(0);
+  const [canGoBack, setCanGoBack] = useState(false);
+  const [hasRenderedOnce, setHasRenderedOnce] = useState(false);
+
+  const handleBack = useCallback(() => {
+    if (canGoBack) {
+      webViewRef.current?.goBack();
+      return true;
+    }
+
+    onClose();
+    return true;
+  }, [canGoBack, onClose]);
+
+  useEffect(() => {
+    if (Platform.OS !== 'android') {
+      return;
+    }
+
+    const subscription = BackHandler.addEventListener('hardwareBackPress', handleBack);
+    return () => {
+      subscription.remove();
+    };
+  }, [handleBack]);
 
   const retry = () => {
     setLoading(true);
@@ -21,29 +57,18 @@ export default function WebViewPage({ url, title, onBack }: WebViewPageProps) {
     setReloadKey((value) => value + 1);
   };
 
+  const isPortalOrAdminPage =
+    url.includes('/portal/') || url === 'https://demo.muulox.com/' || url.includes('demo.muulox.com');
+  const webviewChromeColor = isPortalOrAdminPage ? '#4A4A66' : colors.white;
+
   return (
-    <View style={styles.container}>
-      <View style={styles.header}>
-        <TouchableOpacity
-          onPress={onBack}
-          style={styles.iconButton}
-          accessibilityRole="button"
-          accessibilityLabel="Go back"
-        >
-          <ArrowLeftIcon size={20} color="#374151" strokeWidth={2} />
-        </TouchableOpacity>
-        <Text style={styles.headerTitle} numberOfLines={1}>
-          {title}
-        </Text>
-        <TouchableOpacity
-          onPress={retry}
-          style={styles.iconButton}
-          accessibilityRole="button"
-          accessibilityLabel="Reload page"
-        >
-          <RefreshCwIcon size={20} color="#6B7280" strokeWidth={2} />
-        </TouchableOpacity>
-      </View>
+    <SafeAreaView style={[styles.container, { backgroundColor: webviewChromeColor }]}>
+      <StatusBar
+        style={isPortalOrAdminPage ? 'light' : 'dark'}
+        translucent={false}
+        hidden={false}
+        backgroundColor={webviewChromeColor}
+      />
 
       {loading && !error ? (
         <View style={styles.loadingBarTrack}>
@@ -51,35 +76,68 @@ export default function WebViewPage({ url, title, onBack }: WebViewPageProps) {
         </View>
       ) : null}
 
+      <View style={styles.floatingActionGroup}>
+        <TouchableOpacity
+          onPress={handleBack}
+          style={[styles.floatingActionButton, !canGoBack && styles.floatingActionButtonMuted]}
+          accessibilityRole="button"
+          accessibilityLabel={t('webview.backA11y')}
+        >
+          <ArrowLeftIcon size={18} color="#6B7280" strokeWidth={2} />
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          onPress={retry}
+          style={styles.floatingActionButton}
+          accessibilityRole="button"
+          accessibilityLabel={t('webview.reloadA11y')}
+        >
+          <RefreshCwIcon size={18} color="#6B7280" strokeWidth={2} />
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          onPress={onClose}
+          style={styles.floatingActionButton}
+          accessibilityRole="button"
+          accessibilityLabel={t('webview.homeA11y')}
+        >
+          <HouseIcon size={18} color="#6B7280" strokeWidth={2} />
+        </TouchableOpacity>
+      </View>
+
       <View style={styles.content}>
         {error ? (
           <View style={styles.errorContainer}>
             <View style={styles.errorIconTile}>
               <AlertCircleIcon size={40} color="#F87171" strokeWidth={2} />
             </View>
-            <Text style={styles.errorTitle}>Page unavailable</Text>
-            <Text style={styles.errorDescription}>
-              Check your internet connection and try again.
-            </Text>
+            <Text style={styles.errorTitle}>{t('webview.errorTitle')}</Text>
+            <Text style={styles.errorDescription}>{t('webview.errorDescription')}</Text>
             <TouchableOpacity
               onPress={retry}
               style={styles.retryButton}
               accessibilityRole="button"
-              accessibilityLabel="Try loading page again"
+              accessibilityLabel={t('webview.retryA11y')}
             >
-              <Text style={styles.retryText}>Try Again</Text>
+              <Text style={styles.retryText}>{t('webview.retry')}</Text>
             </TouchableOpacity>
           </View>
         ) : (
           <WebView
+            ref={webViewRef}
             key={reloadKey}
             source={{ uri: url }}
+            allowsBackForwardNavigationGestures
+            onNavigationStateChange={(navState) => {
+              setCanGoBack(navState.canGoBack);
+            }}
             onLoadStart={() => {
               setLoading(true);
               setError(false);
             }}
             onLoadEnd={() => {
               setLoading(false);
+              setHasRenderedOnce(true);
             }}
             onError={() => {
               setLoading(false);
@@ -89,14 +147,14 @@ export default function WebViewPage({ url, title, onBack }: WebViewPageProps) {
           />
         )}
 
-        {loading && !error ? (
+        {loading && !error && !hasRenderedOnce ? (
           <View style={styles.loadingOverlay}>
             <ActivityIndicator size="large" color={colors.appPurple} />
-            <Text style={styles.loadingText}>Loading {title}...</Text>
+            <Text style={styles.loadingText}>{t('webview.loading', { title })}</Text>
           </View>
         ) : null}
       </View>
-    </View>
+    </SafeAreaView>
   );
 }
 
@@ -104,31 +162,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: colors.white,
-  },
-  header: {
-    paddingTop: 56,
-    paddingHorizontal: 16,
-    paddingBottom: 12,
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 10,
-    borderBottomWidth: 1,
-    borderBottomColor: '#F3F4F6',
-    backgroundColor: colors.white,
-  },
-  iconButton: {
-    width: 36,
-    height: 36,
-    borderRadius: 12,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: '#F9FAFB',
-  },
-  headerTitle: {
-    flex: 1,
-    fontSize: 16,
-    fontWeight: '600',
-    color: '#1F2937',
   },
   loadingBarTrack: {
     height: 2,
@@ -141,6 +174,26 @@ const styles = StyleSheet.create({
   },
   content: {
     flex: 1,
+  },
+  floatingActionGroup: {
+    position: 'absolute',
+    bottom: Platform.OS === 'ios' ? 112 : 92,
+    left: 12,
+    zIndex: 10,
+    gap: 8,
+  },
+  floatingActionButton: {
+    width: 34,
+    height: 34,
+    borderRadius: 10,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: 'rgba(255,255,255,0.96)',
+    borderWidth: 1,
+    borderColor: '#E5E7EB',
+  },
+  floatingActionButtonMuted: {
+    opacity: 0.55,
   },
   errorContainer: {
     flex: 1,

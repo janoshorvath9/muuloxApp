@@ -1,0 +1,38 @@
+{
+  "home": {
+    "tagline": "Furnizorul principal B2B pentru Retail & HoReCa",
+    "logoA11y": "Logo Muulox",
+    "toastAdminUnlocked": "Modul administrator deblocat",
+    "shopTitle": "MAGAZIN ONLINE",
+    "shopDescription": "Alege peste 5000 de produse pentru afacerea ta!",
+    "shopWebviewTitle": "Site web și magazin",
+    "portalTitle": "PORTAL MUULOX",
+    "portalDescription": "Locul online unde vezi tot ce ține de firma ta",
+    "portalWebviewTitle": "Panou client",
+    "adminTitle": "Panou de administrare",
+    "adminDescription": "Acces restricționat",
+    "adminWebviewTitle": "Panou de administrare",
+    "legalPrivacy": "Confidențialitate",
+    "legalTerms": "Termeni",
+    "legalPrivacyA11y": "Vezi politica de confidențialitate",
+    "legalTermsA11y": "Vezi termenii și condițiile"
+  },
+  "privacy": {
+    "backA11y": "Înapoi la ecranul principal",
+    "appSubtitle": "Aplicația mobilă MUULOX"
+  },
+  "terms": {
+    "backA11y": "Înapoi la ecranul principal",
+    "appSubtitle": "Aplicația mobilă MUULOX"
+  },
+  "webview": {
+    "backA11y": "Înapoi",
+    "reloadA11y": "Reîncarcă pagina",
+    "homeA11y": "Înapoi la ecranul principal",
+    "errorTitle": "Pagina nu este disponibilă",
+    "errorDescription": "Verificați conexiunea la internet și încercați din nou.",
+    "retry": "Încearcă din nou",
+    "retryA11y": "Încearcă din nou să încarci pagina",
+    "loading": "Se încarcă {{title}}..."
+  }
+}

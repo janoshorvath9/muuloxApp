@@ -1,30 +1,50 @@
 {
   "expo": {
-    "name": "muuloxapp",
+    "name": "MUULOX",
     "slug": "muuloxapp",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/favicon.png",
+    "icon": "./assets/AppIcons/appstore.png",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
     "splash": {
-      "image": "./assets/splash-icon.png",
+      "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#F3FBFC"
     },
     "ios": {
+      "bundleIdentifier": "com.muuloxsrl.muuloxapp",
+      "icon": "./assets/AppIcons/appstore.png",
       "supportsTablet": true
     },
     "android": {
+      "icon": "./assets/AppIcons/playstore.png",
       "adaptiveIcon": {
-        "foregroundImage": "./assets/favicon.png",
-        "backgroundColor": "#ffffff"
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#F3FBFC"
       },
-      "edgeToEdgeEnabled": true,
-      "predictiveBackGestureEnabled": false
+      "edgeToEdgeEnabled": false,
+      "predictiveBackGestureEnabled": false,
+      "package": "com.muulox_srl.muuloxapp"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "3639a632-4d93-4b55-82fc-e30b9d6e58f5"
+      }
+    },
+    "plugins": [
+      "expo-localization",
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#F3FBFC",
+          "image": "./assets/splash.png",
+          "imageWidth": 280
+        }
+      ]
+    ]
   }
 }

@@ -1,0 +1,38 @@
+{
+  "home": {
+    "tagline": "Leading B2B supplier for Retail & HoReCa",
+    "logoA11y": "Muulox logo",
+    "toastAdminUnlocked": "Admin mode unlocked",
+    "shopTitle": "ONLINE STORE",
+    "shopDescription": "Choose from over 5,000 products for your business!",
+    "shopWebviewTitle": "Website & shop",
+    "portalTitle": "MUULOX PORTAL",
+    "portalDescription": "Your online hub for everything about your company",
+    "portalWebviewTitle": "Client dashboard",
+    "adminTitle": "Admin panel",
+    "adminDescription": "Restricted access",
+    "adminWebviewTitle": "Admin panel",
+    "legalPrivacy": "Privacy",
+    "legalTerms": "Terms",
+    "legalPrivacyA11y": "View privacy policy",
+    "legalTermsA11y": "View terms and conditions"
+  },
+  "privacy": {
+    "backA11y": "Back to home",
+    "appSubtitle": "MUULOX Mobile Application"
+  },
+  "terms": {
+    "backA11y": "Back to home",
+    "appSubtitle": "MUULOX Mobile Application"
+  },
+  "webview": {
+    "backA11y": "Go back",
+    "reloadA11y": "Reload page",
+    "homeA11y": "Return to home screen",
+    "errorTitle": "Page unavailable",
+    "errorDescription": "Check your internet connection and try again.",
+    "retry": "Try again",
+    "retryA11y": "Try loading page again",
+    "loading": "Loading {{title}}..."
+  }
+}
