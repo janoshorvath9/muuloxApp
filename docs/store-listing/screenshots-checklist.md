@@ -21,7 +21,7 @@ Capture on a **production or preview build** (not Expo Go), portrait phone, min 
 
 ## Before upload
 
-- [ ] CMS legal pages live (`/aplicatie-mobila/...`)
-- [ ] Privacy link in app opens published URL
+- [ ] Play Console privacy policy URL: **`https://muulox.com/gdpr/`** (matches store listing text)
+- [ ] In-app Privacy / Terms screens work in EN, HU, RO
 - [ ] Cold start: splash shows brand background `#F3FBFC` and logo
 - [ ] `eas build --profile preview --platform android` tested on device

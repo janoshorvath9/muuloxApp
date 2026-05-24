@@ -41,11 +41,11 @@ If Google asks whether data is collected **through WebView / linked services**: 
 
 ## Privacy policy URL
 
-Use the published app legal page, e.g.:
+Enter in Play Console (and use in the store listing):
 
-- `https://muulox.com/aplicatie-mobila/confidentialitate/`
+- **`https://muulox.com/gdpr/`**
 
-Must match the URL entered in Play Console.
+This covers personal data when users shop or use the portal inside the WebView. Optional app addendum at `/aplicatie-mobila/confidentialitate/` is not required for launch if this URL is used everywhere.
 
 ## Account deletion
 

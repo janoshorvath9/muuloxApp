@@ -21,20 +21,20 @@ Create the following pages (suggested slugs). Paste content from the matching `.
 
 ## Google Play Console
 
-| Field | Recommended URL |
-|-------|-----------------|
-| Privacy policy | `https://muulox.com/aplicatie-mobila/` or `https://muulox.com/aplicatie-mobila/confidentialitate/` |
+| Field | URL for launch |
+|-------|----------------|
+| Privacy policy | **`https://muulox.com/gdpr/`** (must match store listing and `DATA_SAFETY_PLAY_CONSOLE.md`) |
 | Data safety answers | See `DATA_SAFETY_PLAY_CONSOLE.md` |
 
-## In-app links
+## In-app legal
 
-After pages are live, the app opens these URLs from `constants/urls.ts` (`LEGAL.appPrivacy`, `LEGAL.appTerms`).
+The app shows bundled Privacy and Terms screens from the home footer (EN / HU / RO). That is separate from the Play Console privacy policy URL above.
+
+Optional CMS URLs in `constants/urls.ts` (`LEGAL.*`) are for future website pages, not required for Play if GDPR is the store policy link.
 
 ## Checklist
 
-- [ ] Create hub page with links to GDPR, website terms, app addendum, app terms
-- [ ] Publish RO (and optionally EN/HU) addendum and app terms
-- [ ] Verify all internal links return 200
-- [ ] Set Play Console privacy policy URL
+- [ ] Set Play Console privacy policy to **`https://muulox.com/gdpr/`**
 - [ ] Complete Data safety form using cheat sheet
-- [ ] Test legal links from the app on a device build
+- [ ] Test in-app Privacy / Terms on a device build (EN, HU, RO)
+- [ ] (Optional) Create hub page and publish app addendum / app terms under `/aplicatie-mobila/...`

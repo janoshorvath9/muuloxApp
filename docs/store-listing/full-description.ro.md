@@ -10,7 +10,7 @@ Aplicația oficială MUULOX oferă acces rapid la:
 
 Aplicația este un wrapper securizat pentru serviciile web MUULOX: folosiți aceleași conturi, prețuri și checkout ca pe site. Comenzile, livrarea și garanțiile sunt guvernate de termenii site-ului MUULOX.
 
-Confidențialitate: https://muulox.com/aplicatie-mobila/confidentialitate/  
-Termeni: https://muulox.com/aplicatie-mobila/termeni/
+Politica de confidențialitate (Play Console + listare): https://muulox.com/gdpr/  
+Termeni site: https://muulox.com/termeni-si-conditii/
 
 Suport: office@muulox.ro

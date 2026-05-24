@@ -10,7 +10,7 @@ The official MUULOX mobile app gives your business quick access to:
 
 This app is a secure wrapper for MUULOX web services: you use the same accounts, prices, and checkout as on the website. Orders, delivery, and warranties are governed by MUULOX website terms.
 
-Privacy: https://muulox.com/aplicatie-mobila/confidentialitate/  
-Terms: https://muulox.com/aplicatie-mobila/termeni/
+Privacy policy (Play Console + listing): https://muulox.com/gdpr/  
+Website terms: https://muulox.com/termeni-si-conditii/
 
 Support: office@muulox.ro

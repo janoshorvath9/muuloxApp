@@ -10,7 +10,7 @@ A hivatalos MUULOX mobilalkalmazás gyors hozzáférést ad:
 
 Az app a MUULOX webes szolgáltatásainak biztonságos burkolata: ugyanazokat a fiókokat, árakat és fizetést használja, mint a weboldal. A rendelések, szállítás és garanciák a MUULOX weboldal feltételei szerint érvényesek.
 
-Adatvédelem: https://muulox.com/aplicatie-mobila/confidentialitate/  
-Feltételek: https://muulox.com/aplicatie-mobila/termeni/
+Adatvédelmi szabályzat (Play Console + áruház): https://muulox.com/gdpr/  
+Weboldal feltételei: https://muulox.com/termeni-si-conditii/
 
 Támogatás: office@muulox.ro

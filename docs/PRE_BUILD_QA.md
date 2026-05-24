@@ -2,31 +2,35 @@
 
 Run after `eas build --profile preview --platform android` or local dev client.
 
+This app is a **WebView wrapper** for MUULOX web services (`muulox.com`, portal hosts). Native code does not replace the website login, checkout, or GDPR processing.
+
 ## Splash
 
 - [ ] Cold start: pale teal background (`#F3FBFC`), MUULOX logo centered
 - [ ] No long white flash before home screen
 - [ ] Android 12+: splash matches adaptive icon background
 
-## Legal links (home footer)
+## Legal (home footer)
 
-- [ ] **Privacy** opens `https://muulox.com/aplicatie-mobila/confidentialitate/` (or hub until CMS live)
-- [ ] **Terms** opens `https://muulox.com/aplicatie-mobila/termeni/`
-- [ ] Links work in EN, HU, RO UI
+- [ ] **Privacy** opens the in-app privacy policy screen (EN / HU / RO)
+- [ ] **Terms** opens the in-app terms screen (EN / HU / RO)
+- [ ] Back returns to home from both screens
 
 ## Core flows
 
-- [ ] Shop opens muulox.com in WebView
-- [ ] Portal opens demo/production portal URL
+- [ ] Shop opens `https://muulox.com/` in WebView
+- [ ] Portal opens `https://demo.muulox.com/portal/` in WebView
 - [ ] Android back: WebView history then home
 - [ ] Reload and home floating buttons work
 - [ ] Language switcher cycles en → hu → ro
 
-## CMS (your side, before production listing)
+## Google Play Console (before production listing)
 
-- [ ] Publish `docs/legal/` pages on muulox.com (see `docs/legal/README.md`)
-- [ ] Play Console privacy URL set
+- [ ] **Privacy policy URL** set to **`https://muulox.com/gdpr/`** (same URL in store listing text and Data safety)
 - [ ] Data safety form filled (`docs/legal/DATA_SAFETY_PLAY_CONSOLE.md`)
+- [ ] Store listing uses the same privacy URL as Play Console (see `docs/store-listing/full-description.*.md`)
+
+Optional later: publish app-specific CMS pages from `docs/legal/` (`/aplicatie-mobila/...`). Not required for launch if Play uses the GDPR page above.
 
 ## Production build (you)
 
