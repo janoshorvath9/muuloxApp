@@ -1,16 +1,18 @@
-# MUULOX — teljes Play Store leírás (HU)
+# MUULOX — Google Play teljes leírás (HU)
 
-A hivatalos MUULOX mobilalkalmazás gyors hozzáférést ad:
+Illessze be a Play Console-ba (magyar listázás). Ezt a címsort ne másolja.
 
-**Online áruház** — Böngésszen és rendeljen több ezer B2B terméket a kiskereskedelem és HoReCa számára a muulox.com oldalon.
+A hivatalos MUULOX mobilalkalmazás gyors hozzáférést biztosít:
 
-**Ügyfélportál** — Jelentkezzen be cége irányítópultjára, dokumentumaihoz és szolgáltatásaihoz egy helyen.
+Online áruház — Böngésszen és rendeljen több ezer B2B terméket kiskereskedelem és HoReCa számára a muulox.com oldalon.
 
-**Nyelvek** — Az alkalmazás angolul, magyarul és románul használható.
+Ügyfélportál — Jelentkezzen be cége irányítópultjára, dokumentumaihoz és szolgáltatásaihoz egy helyen.
 
-Az app a MUULOX webes szolgáltatásainak biztonságos burkolata: ugyanazokat a fiókokat, árakat és fizetést használja, mint a weboldal. A rendelések, szállítás és garanciák a MUULOX weboldal feltételei szerint érvényesek.
+Nyelvek — Az alkalmazás angolul, magyarul és románul használható.
 
-Adatvédelmi szabályzat (Play Console + áruház): https://muulox.com/gdpr/  
+Az alkalmazás biztonságos hozzáférést nyújt a MUULOX webes szolgáltatásaihoz: ugyanazokat a fiókokat, árakat és fizetést használja, mint a weboldalon. A rendelések, szállítás és garanciák a MUULOX weboldal feltételei szerint érvényesek.
+
+Adatvédelmi szabályzat: https://muulox.com/gdpr/
 Weboldal feltételei: https://muulox.com/termeni-si-conditii/
 
 Támogatás: office@muulox.ro

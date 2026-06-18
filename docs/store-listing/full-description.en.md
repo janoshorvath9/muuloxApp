@@ -1,16 +1,18 @@
 # MUULOX — Google Play full description (EN)
 
+Paste into Play Console (English listing). Do not include this title line.
+
 The official MUULOX mobile app gives your business quick access to:
 
-**Online store** — Browse and order from thousands of B2B products for retail and HoReCa on muulox.com.
+Online store — Browse and order thousands of B2B products for retail and HoReCa on muulox.com.
 
-**Client portal** — Sign in to your company dashboard, documents, and services in one place.
+Client portal — Sign in to your company dashboard, documents, and services in one place.
 
-**Languages** — Use the app in English, Hungarian, or Romanian.
+Languages — Use the app in English, Hungarian, or Romanian.
 
-This app is a secure wrapper for MUULOX web services: you use the same accounts, prices, and checkout as on the website. Orders, delivery, and warranties are governed by MUULOX website terms.
+The app provides secure access to MUULOX web services: you use the same accounts, prices, and checkout as on the website. Orders, delivery, and warranties are governed by MUULOX website terms.
 
-Privacy policy (Play Console + listing): https://muulox.com/gdpr/  
+Privacy policy: https://muulox.com/gdpr/
 Website terms: https://muulox.com/termeni-si-conditii/
 
 Support: office@muulox.ro
