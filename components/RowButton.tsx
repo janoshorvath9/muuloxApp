@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, TouchableOpacity, Platform } from 'react-native
 import { ChevronRightIcon } from 'lucide-react-native';
 import { colors } from '../constants/colors';
 
-type Variant = 'primary' | 'secondary' | 'admin';
+type Variant = 'primary' | 'secondary';
 
 export type RowButtonProps = {
   title: string;
@@ -103,28 +103,11 @@ const variants = {
       color: colors.textSecondary,
     },
   }),
-  admin: StyleSheet.create({
-    buttonClientContainer: {
-      backgroundColor: '#111827',
-      borderWidth: 1,
-      borderColor: '#374151',
-    },
-    iconTile: {
-      backgroundColor: 'rgba(255,255,255,0.1)',
-    },
-    buttonClientText: {
-      color: colors.white,
-    },
-    buttonClientDescription: {
-      color: 'rgba(255,255,255,0.5)',
-    },
-  }),
 } as const;
 
 const chevronColor: Record<Variant, string> = {
   primary: colors.white,
   secondary: colors.textSecondary,
-  admin: 'rgba(255,255,255,0.3)',
 };
 
 const RowButton: FC<RowButtonProps> = ({

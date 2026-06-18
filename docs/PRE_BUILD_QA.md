@@ -19,7 +19,9 @@ This app is a **WebView wrapper** for MUULOX web services (`muulox.com`, portal 
 ## Core flows
 
 - [ ] Shop opens `https://muulox.com/` in WebView
-- [ ] Portal opens `https://demo.muulox.com/portal/` in WebView
+- [ ] Portal opens `https://muuloxerp.ro/` in WebView
+- [ ] On fresh install: camera and photo/library permission dialogs appear after splash
+- [ ] Portal WebView: file upload and camera capture work when the portal page requests them
 - [ ] Android back: WebView history then home
 - [ ] Reload and home floating buttons work
 - [ ] Language switcher cycles en → hu → ro

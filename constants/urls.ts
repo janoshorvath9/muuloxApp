@@ -11,6 +11,6 @@ export const LEGAL = {
 
 export const APP_URLS = {
   shop: 'https://muulox.com/',
-  portal: 'https://demo.muulox.com/portal/',
+  portal: 'https://muuloxerp.ro/',
   admin: 'https://demo.muulox.com/',
 } as const;

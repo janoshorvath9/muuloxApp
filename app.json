@@ -15,7 +15,13 @@
     "ios": {
       "bundleIdentifier": "com.muuloxsrl.muuloxapp",
       "icon": "./assets/AppIcons/appstore.png",
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSCameraUsageDescription": "Aplicația are nevoie de acces la cameră pentru funcțiile portalului (ex. scanare, încărcare documente).",
+        "NSPhotoLibraryUsageDescription": "Aplicația are nevoie de acces la galerie pentru a selecta și încărca fișiere în portal.",
+        "NSPhotoLibraryAddUsageDescription": "Aplicația are nevoie de permisiune pentru a salva imagini din portal în galerie.",
+        "NSMicrophoneUsageDescription": "Aplicația are nevoie de acces la microfon pentru funcțiile portalului care folosesc înregistrare video."
+      }
     },
     "android": {
       "icon": "./assets/AppIcons/playstore.png",
@@ -25,7 +31,13 @@
       },
       "edgeToEdgeEnabled": false,
       "predictiveBackGestureEnabled": false,
-      "package": "com.muulox_srl.muuloxapp"
+      "package": "com.muulox_srl.muuloxapp",
+      "permissions": [
+        "CAMERA",
+        "READ_MEDIA_IMAGES",
+        "READ_MEDIA_VIDEO",
+        "READ_EXTERNAL_STORAGE"
+      ]
     },
     "web": {
       "favicon": "./assets/favicon.png"

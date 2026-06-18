@@ -5,7 +5,7 @@ Use this when completing **App content → Data safety** for the MUULOX wrapper 
 ## Summary for reviewers
 
 - **Native app:** Thin shell (home screen, language picker, WebView). Does not collect account or payment data in native code.
-- **Websites in WebView:** When users log in or order on `muulox.com` / portal hosts, processing is described at https://muulox.com/gdpr/
+- **Websites in WebView:** When users log in or order on `muulox.com` / `muuloxerp.ro` / portal hosts, processing is described at https://muulox.com/gdpr/
 
 ## Does your app collect or share any of the required user data types?
 
@@ -16,8 +16,8 @@ Use this when completing **App content → Data safety** for the MUULOX wrapper 
 | Personal info (name, email, etc.) | No | No | Collected on website when user uses WebView, not by native SDK |
 | Financial info | No | No | Payments on website |
 | Location | No | No | |
-| Photos/videos | No | No | |
-| Audio files | No | No | |
+| Photos/videos | No (native) | No | App requests camera/photo permissions for portal WebView features; actual upload/collection happens on `muuloxerp.ro` / portal hosts per https://muulox.com/gdpr/ |
+| Audio files | No (native) | No | Microphone permission requested only for portal WebView `getUserMedia`; no native audio collection |
 | Contacts | No | No | |
 | App activity (analytics) | No | No | No Firebase/analytics in package.json |
 | Web browsing history | No | No | App loads MUULOX URLs only; no general browser history collection |

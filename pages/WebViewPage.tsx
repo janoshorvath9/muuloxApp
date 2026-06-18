@@ -58,7 +58,7 @@ export default function WebViewPage({ url, title, onClose }: WebViewPageProps) {
   };
 
   const isPortalOrAdminPage =
-    url.includes('/portal/') || url === 'https://demo.muulox.com/' || url.includes('demo.muulox.com');
+    url.includes('muuloxerp.ro') || url.includes('demo.muulox.com');
   const webviewChromeColor = isPortalOrAdminPage ? '#4A4A66' : colors.white;
 
   return (
@@ -128,6 +128,10 @@ export default function WebViewPage({ url, title, onClose }: WebViewPageProps) {
             key={reloadKey}
             source={{ uri: url }}
             allowsBackForwardNavigationGestures
+            allowsInlineMediaPlayback
+            mediaCapturePermissionGrantType="grant"
+            allowFileAccess
+            allowFileAccessFromFileURLs
             onNavigationStateChange={(navState) => {
               setCanGoBack(navState.canGoBack);
             }}
